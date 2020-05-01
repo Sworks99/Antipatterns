@@ -7,6 +7,13 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class tests {
+    static Car car;
+
+    @BeforeAll
+    public static void setup() throws Exception {
+
+        car = new Car("audi",2004,"45-23-fg","a3","preto");
+    }
 
     @Test
     public void testCar1() throws CarNotValidatedException {
@@ -21,20 +28,17 @@ public class tests {
     }
 
     @Test
-    public void testCar2() throws CarNotValidatedException {
-        Car car = new Car("audi",2004,"45-23-fg","a3","preto");
+    public void testCar2(){
         assertEquals(2004, car.getAno());
     }
 
     @Test
-    public void testCarroMatricula() throws CarNotValidatedException {
-        Car car = new Car("audi",2004,"45-23-fg","a3","preto");
+    public void testCarroMatricula() {
         assertEquals("45-23-fg", car.getMatricula());
     }
 
     @Test
-    public void testCarroModelo() throws CarNotValidatedException {
-        Car car = new Car("audi",2004,"45-23-fg","a3","preto");
+    public void testCarroModelo() {
         assertEquals("a3", car.getModelo());
 
     }
